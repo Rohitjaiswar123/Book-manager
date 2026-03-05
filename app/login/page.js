@@ -108,16 +108,18 @@ function LoginForm() {
 
 export default function LoginPage() {
     return (
-        <div className="min-h-screen flex items-center justify-center p-4">
-            <div className="absolute top-0 w-full h-full -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-background to-background"></div>
-
-            <Suspense fallback={
+        <Suspense fallback={
+            <div className="min-h-screen flex items-center justify-center p-4">
                 <div className="w-full max-w-md text-center">
                     <p className="text-muted-foreground animate-pulse">Loading...</p>
                 </div>
-            }>
+            </div>
+        }>
+            <div className="min-h-screen flex items-center justify-center p-4">
+                <div className="absolute top-0 w-full h-full -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-background to-background"></div>
+
                 <LoginForm />
-            </Suspense>
-        </div>
+            </div>
+        </Suspense>
     );
 }
